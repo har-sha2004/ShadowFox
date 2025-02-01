@@ -1,4 +1,4 @@
-/* From Uiverse.io by vinodjangid07 */ 
+
 .Btn {
   width: 45px;
   height: 45px;
@@ -8,7 +8,7 @@
   border: none;
   background-color: transparent;
   position: relative;
-  /* overflow: hidden; */
+
   border-radius: 7px;
   cursor: pointer;
   transition: all .3s;
@@ -50,7 +50,6 @@
   backdrop-filter: blur(4px);
 }
 
-/* From Uiverse.io by wilsondesouza */ 
 .Btn1 {
     border: none;
     border-radius: 50%;

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCB - Shedule</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <nav class="bg-black p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="./Resources/Royal_Challengers_Bengaluru_Logo.png" class="h-12 px-6" alt="Logo">
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+
+            <div id="menu" class="hidden md:flex flex-col md:flex-row md:items-center w-full md:w-auto">
+                <a href="index.html"
+                    class="text-white px-4 py-2 hover:bg-gray-300 font-semibold hover:text-black rounded">HOME</a>
+                <a href="victories.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">VICTORIES</a>
+                <a href="players.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">TEAM</a>
+                <a href="schedule.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">MATCH SCHEDULE</a>
+                <a href="statistics.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">STATS</a>
+                <a href="news.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">NEWS</a>
+                <a href="fan-engagement.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">ECHOES OF
+                    FANS</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+    </script>
+
+
+
+
+
+<div class="h-full bg-gradient-to-br from-black to-red-600 py-16">
+
+
+<div id="schedule"  class="max-w-4xl  mx-auto p-2 space-y-4"></div>
+
+<script>
+    const matches = [
+        {
+            date: 'Sunday, March 23, 2025',
+            homeTeam: 'CSK',
+            awayTeam: 'RCB',
+            venue: 'M. A. Chidambaram Stadium, Chennai',
+            time: '19:30 IST',
+            homeColor: 'bg-yellow-400',
+            awayColor: 'bg-red-600'
+        },
+        {
+            date: 'Monday, March 24, 2025',
+            homeTeam: 'SRH',
+            awayTeam: 'KKR',
+            venue: 'Rajiv Gandhi International Stadium, Hyderabad',
+            time: '19:30 IST',
+            homeColor: 'bg-orange-500',
+            awayColor: 'bg-purple-700'
+        },
+        {
+            date: 'Tuesday, March 25, 2025',
+            homeTeam: 'RR',
+            awayTeam: 'LSG',
+            venue: 'Sawai Mansingh Stadium, Jaipur',
+            time: '19:30 IST',
+            homeColor: 'bg-blue-600',
+            awayColor: 'bg-sky-300'
+        },
+        {
+            date: 'Wednesday, March 26, 2025',
+            homeTeam: 'GT',
+            awayTeam: 'SRH',
+            venue: 'Narendra Modi Stadium, Ahmedabad',
+            time: '19:30 IST',
+            homeColor: 'bg-gray-800',
+            awayColor: 'bg-orange-500'
+        },
+        {
+            date: 'Thursday, March 27, 2025',
+            homeTeam: 'MI',
+            awayTeam: 'PBKS',
+            venue: 'Wankhede Stadium, Mumbai',
+            time: '19:30 IST',
+            homeColor: 'bg-blue-700',
+            awayColor: 'bg-red-700'
+        }
+    ];
+
+    function createMatchCard(match) {
+        return `
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-4 bg-gray-50">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 rounded-full ${match.homeColor}"></div>
+                            <span class="font-semibold">${match.homeTeam}</span>
+                        </div>
+                        
+                        <div class="flex flex-col items-center flex-grow">
+                            <div class="text-sm text-gray-600">${match.venue}</div>
+                            <div class="font-semibold">${match.time}</div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <span class="font-semibold">${match.awayTeam}</span>
+                            <div class="w-3 h-3 rounded-full ${match.awayColor}"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-2 text-sm text-gray-500 text-center">
+                        ${match.date}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderSchedule() {
+        const scheduleContainer = document.getElementById('schedule');
+        scheduleContainer.innerHTML = matches
+            .map(match => createMatchCard(match))
+            .join('');
+    }
+
+    
+    document.addEventListener('DOMContentLoaded', renderSchedule);
+</script>
+
+</div>
+
+
+
+
+
+
+
+
+        <footer class="bg-[#2D2424] py-4">
+            <div class="flex flex-col md:flex-row items-center md:items-start md:justify-between px-6 md:px-12">
+                <div class="flex justify-center md:justify-start w-full md:w-auto mb-4 md:mb-0">
+                    <img class="h-32 md:h-48" src="./Resources/Royal_Challengers_Bengaluru_Logo.png" alt="RCB Logo">
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center md:text-left">
+                    <a href="index.html" class="text-white">HOME</a>
+                    <a href="victories.html" class="text-white">VICTORIES</a>
+                    <a href="players.html" class="text-white">TEAM</a>
+                    <a href="schedule.html" class="text-white">MATCH SCHEDULE</a>
+                    <a href="statistics.html" class="text-white">STATISTICS</a>
+                    <a href="news.html" class="text-white">NEWS</a>
+                    <a href="fan-engagement.html" class="text-white">ECHOES OF FANS</a>
+                </div>
+            </div>
+            <p class="text-center text-white">Social Media Accounts</p>
+            <div class="flex justify-center mt-6 space-x-6">
+                <a href="https://www.facebook.com/RoyalChallengersBangalore/" class="text-white hover:text-gray-400"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://x.com/RCBTweets?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&mx=2" class="text-white hover:text-gray-400"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.instagram.com/royalchallengers.bengaluru/?hl=en" class="text-white hover:text-gray-400"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.youtube.com/channel/UCCq1xDJMBRF61kiOgU90_kw" class="text-white hover:text-gray-400"><i class="fab fa-youtube fa-lg"></i></a>
+    
+            </div>
+        </footer>
+        <div class="bg-white text-black text-center p-4">
+            <p>&copy; 2025 Royal Challengers Bangalore. All rights reserved.</p>
+        </div>
+        
+        
+</body>
+</html>

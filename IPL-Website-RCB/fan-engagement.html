@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCB - Fan page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <nav class="bg-black p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="./Resources/Royal_Challengers_Bengaluru_Logo.png" class="h-12 px-6" alt="Logo">
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+
+            <div id="menu" class="hidden md:flex flex-col md:flex-row md:items-center w-full md:w-auto">
+                <a href="index.html"
+                    class="text-white px-4 py-2 hover:bg-gray-300 font-semibold hover:text-black rounded">HOME</a>
+                <a href="victories.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">VICTORIES</a>
+                <a href="players.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">TEAM</a>
+                <a href="schedule.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">MATCH
+                    SCHEDULE</a>
+                <a href="statistics.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">STATS</a>
+                <a href="news.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">NEWS</a>
+                <a href="fan-engagement.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">ECHOES OF
+                    FANS</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+    </script>
+
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-br from-blue-800 to-red-900 text-white py-20">
+    <div class="container mx-auto px-6 text-center">
+        <h1 class="text-5xl font-bold mb-4">Welcome to RCB Nation</h1>
+        <p class="text-xl mb-8">Join the biggest cricket fan community in India</p>
+        <button class="bg-yellow-500 text-red-700 px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition duration-300">
+            Join Now
+        </button>
+    </div>
+</div>
+
+ 
+
+    <!-- Fan Engagement Features -->
+    <div class="container mx-auto ">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Fan Club Membership -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="text-red-600 text-4xl mb-4">
+                    🏏
+                </div>
+                <h3 class="text-xl font-bold mb-4">Fan Club Membership</h3>
+                <p class="text-gray-600 mb-4">Get exclusive access to match tickets, merchandise, and meet & greet
+                    sessions with your favorite players.</p>
+                <button class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700">
+                    Learn More
+                </button>
+            </div>
+
+            <!-- Match Day Experience -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="text-red-600 text-4xl mb-4">
+                    🎉
+                </div>
+                <h3 class="text-xl font-bold mb-4">Match Day Experience</h3>
+                <p class="text-gray-600 mb-4">Enhance your stadium experience with exclusive fan zones, activities, and
+                    special merchandise discounts.</p>
+                <button class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700">
+                    View Events
+                </button>
+            </div>
+
+            <!-- Digital Community -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="text-red-600 text-4xl mb-4">
+                    📱
+                </div>
+                <h3 class="text-xl font-bold mb-4">Digital Community</h3>
+                <p class="text-gray-600 mb-4">Connect with fellow fans, participate in discussions, and share your RCB
+                    moments on our digital platform.</p>
+                <button class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700">
+                    Join Community
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fan Feed Section -->
+    <div class="bg-gray-50 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Fan Feed</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Fan Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./Resources\fansceleb.jpg" alt="Fan celebration" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2">Match Day Memories</h3>
+                        <p class="text-gray-600">Amazing atmosphere at the Chinnaswamy Stadium! #PlayBold</p>
+                    </div>
+                </div>
+
+                <!-- Fan Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./Resources\tibute.jpg" alt="Fan artwork" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2">Fan Art</h3>
+                        <p class="text-gray-600">My tribute to King Kohli! #RCBForever</p>
+                    </div>
+                </div>
+
+                <!-- Fan Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="./Resources\fanmeet.png" alt="Fan meeting" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2">Meet & Greet</h3>
+                        <p class="text-gray-600">Unforgettable moment with the team! #RCBFamily</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Quiz Section -->
+        <div class="max-w-2xl mx-auto bg-white rounded-lg  p-6">
+            <div id="quiz-intro" class="text-center">
+                <h2 class="text-2xl font-bold text-black">RCB Ultimate Fan Quiz</h2>
+                <br><br>
+                <p class="mb-6">Test your knowledge about Royal Challengers Bangalore!</p>
+                <button onclick="startQuiz()" class="bg-yellow-500 text-red-700 px-8 py-3 rounded-full font-bold hover:bg-yellow-400">
+                    Start Quiz
+                </button>
+            </div>
+
+            <div id="quiz-container" class="hidden">
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <span id="question-number" class="text-lg font-semibold">Question 1/10</span>
+                        <span id="timer" class="text-red-700 font-bold">30</span>
+                    </div>
+                    <div id="question" class="text-xl font-medium mb-4"></div>
+                    <div id="options" class="space-y-3"></div>
+                </div>
+            </div>
+
+            <div id="results" class="hidden text-center">
+                <h3 class="text-2xl font-bold mb-4">Quiz Complete!</h3>
+                <p class="text-lg mb-4">Your Score: <span id="score" class="font-bold text-red-700"></span>/10</p>
+                <button onclick="resetQuiz()" class="bg-yellow-500 text-red-700 px-8 py-3 rounded-full font-bold hover:bg-yellow-400">
+                    Try Again
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const questions = [
+            {
+                question: "Which year did RCB reach their first IPL final?",
+                options: ["2009", "2010", "2011", "2012"],
+                correct: 0
+            },
+            {
+                question: "Who holds the record for the highest individual score for RCB in IPL?",
+                options: ["Virat Kohli", "Chris Gayle", "AB de Villiers", "Brendon McCullum"],
+                correct: 1
+            },
+            {
+                question: "What is RCB's home ground?",
+                options: ["Eden Gardens", "M. Chinnaswamy Stadium", "Wankhede Stadium", "Feroz Shah Kotla"],
+                correct: 1
+            },
+            {
+                question: "Which player has captained RCB for the longest period?",
+                options: ["Rahul Dravid", "Anil Kumble", "Virat Kohli", "Daniel Vettori"],
+                correct: 2
+            },
+            {
+                question: "What was RCB's original team name in 2008?",
+                options: ["Royal Challengers Bangalore", "Bangalore Royal Challengers", "Bangalore Challengers", "Royal Bangalore"],
+                correct: 0
+            },
+            {
+                question: "Which RCB player has taken the most wickets in a single IPL season?",
+                options: ["Yuzvendra Chahal", "Anil Kumble", "Mitchell Starc", "Harshal Patel"],
+                correct: 3
+            },
+            {
+                question: "Who scored RCB's first century in IPL history?",
+                options: ["Chris Gayle", "Virat Kohli", "Manish Pandey", "AB de Villiers"],
+                correct: 2
+            },
+            {
+                question: "What is RCB's team motto?",
+                options: ["Play Bold", "Challenge Accepted", "E Sala Cup Namde", "Red Army"],
+                correct: 0
+            },
+            {
+                question: "Which year did Chris Gayle join RCB?",
+                options: ["2009", "2010", "2011", "2012"],
+                correct: 2
+            },
+            {
+                question: "Who was RCB's first IPL captain?",
+                options: ["Rahul Dravid", "Jacques Kallis", "Anil Kumble", "Kevin Pietersen"],
+                correct: 0
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let timer;
+        let timeLeft;
+
+        function startQuiz() {
+            document.getElementById('quiz-intro').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = questions[currentQuestion];
+            document.getElementById('question-number').textContent = `Question ${currentQuestion + 1}/10`;
+            document.getElementById('question').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.className = 'w-full text-left p-3 rounded border border-gray-300 hover:bg-gray-100  transition-colors';
+                button.onclick = () => selectAnswer(index);
+                optionsContainer.appendChild(button);
+            });
+
+            // Reset and start timer
+            timeLeft = 30;
+            if (timer) clearInterval(timer);
+            timer = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            timeLeft--;
+            document.getElementById('timer').textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                selectAnswer(-1); 
+            }
+        }
+
+        function selectAnswer(selectedIndex) {
+            clearInterval(timer);
+            
+            const buttons = document.getElementById('options').getElementsByTagName('button');
+            for (let button of buttons) {
+                button.disabled = true;
+            }
+
+            if (selectedIndex === questions[currentQuestion].correct) {
+                buttons[selectedIndex].classList.add('bg-green-500', 'text-white');
+                score++;
+            } else {
+                if (selectedIndex >= 0) {
+                    buttons[selectedIndex].classList.add('bg-red-500', 'text-white');
+                }
+                buttons[questions[currentQuestion].correct].classList.add('bg-green-500', 'text-white');
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }, 1500);
+        }
+
+        function showResults() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('score').textContent = score;
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('quiz-intro').classList.remove('hidden');
+        }
+    </script>
+
+    <footer class="bg-[#2D2424] py-4">
+        <div class="flex flex-col md:flex-row items-center md:items-start md:justify-between px-6 md:px-12">
+            <div class="flex justify-center md:justify-start w-full md:w-auto mb-4 md:mb-0">
+                <img class="h-32 md:h-48" src="./Resources/Royal_Challengers_Bengaluru_Logo.png" alt="RCB Logo">
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center md:text-left">
+                <a href="index.html" class="text-white">HOME</a>
+                <a href="victories.html" class="text-white">VICTORIES</a>
+                <a href="players.html" class="text-white">TEAM</a>
+                <a href="schedule.html" class="text-white">MATCH SCHEDULE</a>
+                <a href="statistics.html" class="text-white">STATS</a>
+                <a href="news.html" class="text-white">NEWS</a>
+                <a href="fan-engagement.html" class="text-white">ECHOES OF FANS</a>
+            </div>
+        </div>
+        <p class="text-center text-white">Social Media Accounts</p>
+        <div class="flex justify-center mt-6 space-x-6">
+            <a href="https://www.facebook.com/RoyalChallengersBangalore/" class="text-white hover:text-gray-400"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="https://x.com/RCBTweets?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&mx=2" class="text-white hover:text-gray-400"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="https://www.instagram.com/royalchallengers.bengaluru/?hl=en" class="text-white hover:text-gray-400"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://www.youtube.com/channel/UCCq1xDJMBRF61kiOgU90_kw" class="text-white hover:text-gray-400"><i class="fab fa-youtube fa-lg"></i></a>
+
+        </div>
+    </footer>
+    <div class="bg-white text-black text-center p-4">
+        <p>&copy; 2025 Royal Challengers Bangalore. All rights reserved.</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCB - News</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+
+<body>
+
+
+    <nav class="bg-black p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="./Resources/Royal_Challengers_Bengaluru_Logo.png" class="h-12 px-6" alt="Logo">
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+
+            <div id="menu" class="hidden md:flex flex-col md:flex-row md:items-center w-full md:w-auto">
+                <a href="index.html"
+                    class="text-white px-4 py-2 hover:bg-gray-300 font-semibold hover:text-black rounded">HOME</a>
+                <a href="victories.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">VICTORIES</a>
+                <a href="players.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">TEAM</a>
+                <a href="schedule.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">MATCH SCHEDULE</a>
+                <a href="statistics.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">STATS</a>
+                <a href="news.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">NEWS</a>
+                <a href="fan-engagement.html"
+                    class="text-white font-semibold px-4 py-2 hover:bg-gray-300 hover:text-black rounded">ECHOES OF
+                    FANS</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+    </script>
+<!--News -->
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-2xl text-center font-bold mb-8 text-gray-800">Latest News</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="newsContainer">
+      
+    </div>
+</div>
+<script>
+   
+    const newsData = [
+        {
+            title: "RCB Announces New Captain for IPL 2025",
+            excerpt: "In a major announcement, Royal Challengers Bangalore has named their new captain for the upcoming IPL season.",
+            image: "./Resources/download.jpeg",
+            date: "2025-01-28",
+            category: "Team News",
+            link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fuccricket.live%2Fcricket%2Fipl%2Fwho-will-lead-royal-challengers-bengaluru-in-ipl-2025-16912%2F&psig=AOvVaw0k3hkS9-UfiDyPt2J5VZsD&ust=1738413082702000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMDf48P7n4sDFQAAAAAdAAAAABAE"
+        },
+        {
+            title: "Training Camp Begins for IPL 2025",
+            excerpt: "The RCB squad has assembled in Bangalore as preparations begin for the upcoming season.",
+            image: "./Resources/DSC_0249.jpeg",
+            date: "2025-01-25",
+            category: "Training Update",
+            link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.royalchallengers.com%2Frcb-cricket-news%2Fnews%2Fday-2-at-the-royal-challengers-bangalore-training-camp&psig=AOvVaw1U4jJs-o_IhIf3PXE9-pG9&ust=1738412926081000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPjzyPn6n4sDFQAAAAAdAAAAABAE"
+        },
+        {
+            title: "Fan Zone Expansion at Chinnaswamy Stadium",
+            excerpt: "RCB announces major upgrades to enhance fan experience at home games.",
+            image: "./Resources/RCB-Fans.jpg",
+            date: "2025-01-20",
+            category: "Stadium News",
+            link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Ffemalecricket.com%2Fwpl-2024%2F38494-rcb-fans-extend-their-unwavering-support-at-chinnaswamy-stadium.html&psig=AOvVaw1b2fFg0qmLhGldusNW-ZIK&ust=1738412853587000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCKC1jdb6n4sDFQAAAAAdAAAAABAE"
+        },
+        {
+            title: "New Jersey Launch Event",
+            excerpt: "RCB unveils new jersey design for IPL 2025 season with sustainable materials.",
+            image: "./Resources/jersey.jpeg",
+            date: "2025-01-15",
+            category: "Team News",
+            link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.deccanherald.com%2Farchives%2Fipl-2023-royal-challengers-bangalore-unveil-new-jersey-in-bengaluru-1204920-1400526&psig=AOvVaw0vu-L_QXaANAtcU_qw12Ey&ust=1738412982846000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNinhpT7n4sDFQAAAAAdAAAAABAE"
+        },
+        {
+            title: "Youth Development Program Success",
+            excerpt: "Three players from RCB's youth program selected for national U-19 squad.",
+            image: "./Resources/youth.webp",
+            date: "2025-01-10",
+            category: "Academy News",
+            link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hindustantimes.com%2Fcricket%2Frcb-launches-made-of-bold-sports-development-programme-101734687210454.html&psig=AOvVaw17Ve2saw4OTz14sqB0S5YU&ust=1738412508600000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCMDwwLf5n4sDFQAAAAAdAAAAABAE"
+        },
+        {
+            title: "Community Outreach Initiative",
+            excerpt: "RCB players participate in city-wide cricket coaching camps for underprivileged children.",
+            image: "./Resources/outreach.jpg",
+            date: "2025-01-05",
+            category: "Community",
+            link:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fmediabrief.com%2Fampere-and-rcb-interact-with-children-at-ngo%2F&psig=AOvVaw3c4LFDicuJnoIST8Yzp_SF&ust=1738413025670000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIC6haj7n4sDFQAAAAAdAAAAABAE"
+        }
+    ];
+
+  
+    function createNewsCards() {
+        const container = document.getElementById('newsContainer');
+        
+        newsData.forEach(news => {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105';
+            
+            card.innerHTML = `
+                <img src="${news.image}" alt="${news.title}" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">
+                            ${news.category}
+                        </span>
+                        <span class="text-gray-500 text-sm ml-2">
+                            ${moment(news.date).fromNow()}
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2 text-gray-800">${news.title}</h2>
+                    <p class="text-gray-600 mb-4">${news.excerpt}</p>
+                    <button class="bg-red-700 text-white px-4 py-2 rounded hover:bg-red-800 transition duration-300">
+                        Read More
+                    </button>
+                </div>
+            `;
+            
+            container.appendChild(card);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        createNewsCards();
+    });
+</script>
+
+
+    
+<footer class="bg-[#2D2424] py-4">
+    <div class="flex flex-col md:flex-row items-center md:items-start md:justify-between px-6 md:px-12">
+        <div class="flex justify-center md:justify-start w-full md:w-auto mb-4 md:mb-0">
+            <img class="h-32 md:h-48" src="./Resources/Royal_Challengers_Bengaluru_Logo.png" alt="RCB Logo">
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center md:text-left">
+            <a href="index.html" class="text-white">HOME</a>
+            <a href="victories.html" class="text-white">VICTORIES</a>
+            <a href="players.html" class="text-white">TEAM</a>
+            <a href="schedule.html" class="text-white">MATCH SCHEDULE</a>
+            <a href="statistics.html" class="text-white">STATISTICS</a>
+            <a href="news.html" class="text-white">NEWS</a>
+            <a href="fan-engagement.html" class="text-white">ECHOES OF FANS</a>
+        </div>
+    </div>
+    <p class="text-center text-white">Social Media Accounts</p>
+    <div class="flex justify-center mt-6 space-x-6">
+        <a href="https://www.facebook.com/RoyalChallengersBangalore/" class="text-white hover:text-gray-400"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="https://x.com/RCBTweets?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&mx=2" class="text-white hover:text-gray-400"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="https://www.instagram.com/royalchallengers.bengaluru/?hl=en" class="text-white hover:text-gray-400"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="https://www.youtube.com/channel/UCCq1xDJMBRF61kiOgU90_kw" class="text-white hover:text-gray-400"><i class="fab fa-youtube fa-lg"></i></a>
+
+    </div>
+</footer>
+<div class="bg-white text-black text-center p-4">
+    <p>&copy; 2025 Royal Challengers Bangalore. All rights reserved.</p>
+</div>
+
+
+</body>
+</html>

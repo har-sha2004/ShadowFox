@@ -9,54 +9,96 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="git.css">
-
-
 </head>
 
 <body class="bg-black text-gray-200 font-sans">
 
-    <header
-        class=" bg-opacity-100 rounded-2xl fixed mx-auto left-0 right-0 z-10  border-b-2 border-[#33353F] text-white p-6">
+ 
+
+
+    <header class="bg-opacity-100 rounded-2xl fixed mx-auto left-0 right-0 z-10 border-b-2 border-[#33353F] text-white p-6">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-4xl font-semibold">HARSHA P K</h1>
-            <nav>
+            
+            <!-- Hamburger Button -->
+            <button id="hamburger" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+    
+            <!-- Navigation -->
+            <nav class="hidden md:block">
                 <ul class="flex space-x-4">
                     <li><a href="#about" class="hover:text-gray-300 text-xl">About</a></li>
                     <li><a href="#skills" class="hover:text-gray-300 text-xl">Skills</a></li>
                     <li><a href="#projects" class="hover:text-gray-300 text-xl">Projects</a></li>
-                    <li><a href="#contact" class="hover:text-gray-300  text-xl">Contact</a></li>
+                    <li><a href="#contact" class="hover:text-gray-300 text-xl">Contact</a></li>
                 </ul>
             </nav>
         </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-20 hidden">
+            <div class="flex flex-col items-center justify-center h-full space-y-6">
+                <a href="#about" class="text-2xl hover:text-gray-300">About</a>
+                <a href="#skills" class="text-2xl hover:text-gray-300">Skills</a>
+                <a href="#projects" class="text-2xl hover:text-gray-300">Projects</a>
+                <a href="#contact" class="text-2xl hover:text-gray-300">Contact</a>
+                <button id="close-menu" class="text-white mt-8">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </header>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+    
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+    
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    
+        
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    });
+    </script>
 
     <!-- Hero Section -->
-    <section class="bg-black   text-center py-64">
-        <div class="flex ">
-
-            <div class="ms-56">
-                <h2 class="text-5xl font-semibold  mb-10">Hello, I'm Harsha</h2>
-
-                <p class="text-3xl mb-6">A passionate developer creating modern and responsive websites</p>
-                <a href="#projects" class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">View
-                    My Work</a>
+    <section class="bg-black text-center py-32 md:py-64 px-4">
+        <div class="flex flex-col md:flex-row justify-center items-center">
+            <div class="text-center md:text-left  md:mr-16">
+                <h2 class="text-4xl md:text-5xl font-semibold mb-6">Hello, I'm Harsha</h2>
+                <p class="text-2xl md:text-3xl  mb-6">A passionate developer creating modern and responsive websites</p>
+                <a href="#projects" class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">View My Work</a>
             </div>
-            <div class="container">
-                <img src="photo.jpg" alt="Hero Icon Not Loaded"
-                    class=" w-72 h-62 mb-6 mx-auto border-b-2 me-72 rounded-full">
+            <div class="mt-8 md:mt-0">
+                <img src="photo.jpg" alt="Hero Icon Not Loaded" class="w-48 md:w-72 h-72 md:h-62 mb-6 mx-auto rounded-full">
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-18 bg-black text-gray-200">
-        <h2 class="text-4xl font-bold   text-center  mb-10">About Me</h2>
-        <div class="container flex gap-8 ms-56 ">
-
-            <img src="p3.png" alt="" class="w-76 h-72 ">
-            <div class="">
-
-                <p class="text-lg max-w-3xl mb-32">
+        <h2 class="text-4xl font-bold text-center mb-10">About Me</h2>
+        <div class="container flex flex-col md:flex-row gap-8 mx-auto px-4 max-w-6xl">
+            <img src="p3.png" alt="" class="w-full md:w-1/3 h-auto mx-auto mb-6 md:mb-0">
+            <div class="w-full md:w-2/3">
+                <p class="text-lg text-center md:text-left">
                     I am a dedicated Frontend Web Developer with a strong passion for building interactive,
                     user-friendly, and responsive web applications. My journey in web development began with a
                     fascination for how the web connects people and services, and over time, I have honed my skills to
@@ -68,84 +110,75 @@
                 </p>
             </div>
         </div>
+    </section>
 
-    <section id="skills" class="py-52 bg-black">
-        <div class="w-96 mx-auto  px-2">
-
-          <!-- Title -->
-          <h2 class="text-4xl font-bold text-center mb-12 text-white">My Skills </h2>
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 md:py-52 bg-black px-4">
+        <div class="w-full max-w-md mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">My Skills</h2>
     
-          <!-- Skills List -->
-          <div class="">
-      
-            <div class=" rounded shadow-md p-5">
-              <div class="flex justify-between items-center">
-                <h3 class="text-lg font-semibold ">HTML</h3>
-                <span class="text-sm font-medium ">100%</span>
-              </div>
-              <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                <div class="bg-purple-500 h-1 rounded-full" style="width: 100%;"></div>
-              </div>
-            </div>
+            <div class="space-y-6">
+                <div class="rounded shadow-md p-5">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold">HTML</h3>
+                        <span class="text-sm font-medium">100%</span>
+                    </div>
+                    <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
+                        <div class="bg-purple-500 h-1 rounded-full" style="width: 100%;"></div>
+                    </div>
+                </div>
     
- 
-            <div class=" rounded-lg shadow-md p-6">
-              <div class="flex justify-between items-center">
-                <h3 class="text-lg font-semibold ">Tailwind CSS</h3>
-                <span class="text-sm font-medium ">90%</span>
-              </div>
-              <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                <div class="bg-purple-500 h-1 rounded-full" style="width: 90%;"></div>
-              </div>
-            </div>
+                <div class="rounded-lg shadow-md p-5">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold">Tailwind CSS</h3>
+                        <span class="text-sm font-medium">90%</span>
+                    </div>
+                    <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
+                        <div class="bg-purple-500 h-1 rounded-full" style="width: 90%;"></div>
+                    </div>
+                </div>
     
-       
-            <div class=" rounded-lg shadow-md p-6">
-              <div class="flex justify-between items-center">
-                <h3 class="text-lg font-semibold ">JavaScript</h3>
-                <span class="text-sm font-medium ">90%</span>
-              </div>
-              <div class="w-full bg-gray-200 rounded-full h-1 mt-2">
-                <div class="bg-purple-500 h-1 rounded-full" style="width: 90%;"></div>
-              </div>
-            </div>
+                <div class="rounded-lg shadow-md p-5">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold">JavaScript</h3>
+                        <span class="text-sm font-medium">90%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-1 mt-2">
+                        <div class="bg-purple-500 h-1 rounded-full" style="width: 90%;"></div>
+                    </div>
+                </div>
     
-         
-            <div class=" rounded-lg shadow-md p-6">
-              <div class="flex justify-between items-center">
-                <h3 class="text-lg font-semibold">React</h3>
-                <span class="text-sm font-medium ">70%</span>
-              </div>
-              <div class="w-full bg-gray-200 rounded-full h-1 mt-2">
-                <div class="bg-purple-500 h-1 rounded-full" style="width: 70%;"></div>
-              </div>
-            </div>
+                <div class="rounded-lg shadow-md p-5">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold">React</h3>
+                        <span class="text-sm font-medium">70%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-1 mt-2">
+                        <div class="bg-purple-500 h-1 rounded-full" style="width: 70%;"></div>
+                    </div>
+                </div>
     
-            
-            <div class=" rounded-lg shadow-md p-6">
-              <div class="flex  justify-between items-center">
-                <h3 class="text-lg font-semibold ">Python</h3>
-                <span class="text-sm font-medium ">80%</span>
-              </div>
-              <div class="w-full bg-gray-200 rounded-full h-1 mt-2">
-                <div class="bg-purple-500 h-1 rounded-full" style="width: 80%;"></div>
-              </div>
+                <div class="rounded-lg shadow-md p-5">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold">Python</h3>
+                        <span class="text-sm font-medium">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-1 mt-2">
+                        <div class="bg-purple-500 h-1 rounded-full" style="width: 80%;"></div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-
-
+    </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="bg- py-30">
+    <section id="projects" class="bg-black py-24 md:py-30 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-10">My Projects</h2>
-            <div class="grid grid-cols-1 grid-cols-2 w-1/2 gap-20 mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mx-auto">
                 <!-- Project 1 -->
                 <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
-                    <img src="pic.png" alt="Hero Icon" class="mx-auto  w-full h-42 mb-6 ">
-
+                    <img src="pic.png" alt="Hero Icon" class="mx-auto w-full h-42 mb-6 object-cover">
                     <div class="p-3">
                         <h3 class="text-2xl font-bold mb-2">My Family Potrait</h3>
                         <p class="text-gray-400 mb-4">A Medical History Website for managing family medical histories
@@ -157,15 +190,14 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="bg-gray-900 shadow-lg rounded-lg ">
-                    <img src="p1.jpg" alt="Project " class="h-48 mb-6 mx-auto w-full">
+                <div class="bg-gray-900 shadow-lg rounded-lg overflow-hidden">
+                    <img src="p1.jpg" alt="Project" class="h-48 mb-6 mx-auto w-full object-cover">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">Netflix clone</h3>
                         <p class="text-gray-400 mb-4">
-
-                            A responsive web app built with React.js, fetching movie/TV data . Features include dynamic
+                            A responsive web app built with React.js, fetching movie/TV data. Features include dynamic
                             banners, category listings, video previews (YouTube API), and responsive design.
-                            Tech Stack: React.js,tailwindcss
+                            Tech Stack: React.js, tailwindcss
                         </p>
                         <a href="#" class="text-blue-400 hover:underline">View Project</a>
                     </div>
@@ -175,50 +207,43 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-black text-white py-64">
+    <section id="contact" class="bg-black text-white py-32 md:py-64 px-4">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
-            <p class="text-lg mb-6 ">
+            <p class="text-lg mb-6 max-w-2xl mx-auto">
                 I'd love to connect with you! Whether it's a project collaboration, a job opportunity, or just to say
                 hi, feel free to reach out.
             </p>
 
-            <!-- From Uiverse.io by vinodjangid07 -->
-            <div class="items-center ms-72 ">
-                <div class="flex gap-5 ms-96 ">
-                    <a href="https://github.com/har-sha2004">
-                        <button class="Btn ">
-                            <span class="svgContainer">
-                                <svg fill="white" viewBox="0 0 496 512" height="1.6em">
-                                    <path
-                                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                                    </path>
-                                </svg>
-                            </span>
-                            <span class="BG"></span>
-                        </button>
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/harsha-pk-345943257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-                        <button class="Btn1 ">
-                            <svg viewBox="0 0 16 16" height="16" width="16" xmlns="http://www.w3.org/2000/svg"
-                                class="svgIcon">
+            <div class="flex justify-center gap-5">
+                <a href="https://github.com/har-sha2004">
+                    <button class="Btn">
+                        <span class="svgContainer">
+                            <svg fill="white" viewBox="0 0 496 512" height="1.6em">
                                 <path
-                                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z">
+                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
                                 </path>
                             </svg>
-                            <span class="text">LinkedIn</span>
-                        </button>
-                    </a>
-                </div>
+                        </span>
+                        <span class="BG"></span>
+                    </button>
+                </a>
+                <a href="https://www.linkedin.com/in/harsha-pk-345943257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                    <button class="Btn1">
+                        <svg viewBox="0 0 16 16" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="svgIcon">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"></path>
+                        </svg>
+                        <span class="text">LinkedIn</span>
+                    </button>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 text-center py-6">
-        <p>&copy; 2025Harsha. All rights reserved.</p>
+        <p>&copy; 2025 Harsha. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
+                            
